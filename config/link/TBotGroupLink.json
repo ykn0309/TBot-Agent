@@ -15,6 +15,16 @@
       "source": "ocr_tool",
       "target": "worker",
       "type": "hard"
+    },
+    {
+      "source": "worker",
+      "target": "doc_tool",
+      "type": "soft"
+    },
+    {
+      "source": "doc_tool",
+      "target": "worker",
+      "type": "hard"
     }
   ]
 }

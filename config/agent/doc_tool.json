@@ -1,0 +1,27 @@
+{
+    "id": "doc_tool",
+    "description": "Doc 工具",
+    "title": "doc_tool",
+    "keywords": ["Doc", "工具"],
+    "manual": "http://wechat.com/xxxx.html",
+    "params": [
+      {
+        "name": "doc_file_name",
+        "title": "doc_file_name",
+        "type": "str",
+        "notnull": true,
+        "description": "Doc 文件名称",
+        "defaultValue": ""
+      }
+    ],
+    "results": [
+      {
+        "name": "doc_result",
+        "title": "doc_result",
+        "type": "str",
+        "notnull": true,
+        "description": "Doc 识别结果",
+        "defaultValue": ""
+      }
+    ]
+  }

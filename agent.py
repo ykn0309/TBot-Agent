@@ -15,6 +15,9 @@ class worker(BaseAgent):
             
             if ocr_result :=  kwargs.get("ocr_result"):
                 prompt += f"\n\n相关文件的文字识别结果为 {ocr_result}"
+
+            if doc_result := kwargs.get("doc_result"):
+                prompt += f"\n\ndocx文件中的文本为 {doc_result}"
                 
         self.add_message("user", prompt, messages)
         response = self.chat_llm(messages,
@@ -53,5 +56,23 @@ class ocr_tool(BaseAgent):
         
         result = {
             "ocr_result": ocr_result
+        }
+        return result, "worker"
+    
+class doc_tool(BaseAgent):
+    def __init__(self, graph, config, logger):
+        super().__init__(graph, config, logger)
+
+    def forward(self, messages, **kwargs):
+        doc_file_name = kwargs.get("doc_file_name")
+        if not doc_file_name:
+            raise ReportError("doc_file_name is not provided", "worker")
+        
+        from docx import Document
+        doc = Document(doc_file_name)
+        doc_result = "\n".join(para.text for para in doc.paragraphs)
+
+        result = {
+            "doc_result": doc_result
         }
         return result, "worker"

@@ -15,8 +15,8 @@ def run_task(context):
 
 
 if __name__ == "__main__":
-    file_path = "C:\\Users\\lornd\\Downloads\\FC804E96CF497636909FC43BE21_07186CAC_E21D4.jpg"
-    task = f"学校发了一个新的讲座通知，相关文件在 {file_path}，能告诉我讲座什么时候在哪里举行，是有关于什么的讲座吗？"
+    file_path = "./data/68ccf11a-bcd3-41e5-a5ee-3e29253449e9.docx"
+    task = f"请按照提供的文件中的说明，使用句子'Twinkle twinkle little star, how I wonder what you are'作为密钥生成一个单词。这个单词是什么？相关文件在 {file_path}。"
     
     context = {
         "flowId": "worker",
@@ -26,7 +26,7 @@ if __name__ == "__main__":
             "file_path": file_path,
         },
         "results": {
-            "result": "讲座相关信息"
+            "result": "得到的单词"
         }
     }
     

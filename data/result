@@ -1,0 +1,119 @@
+ ykn@LAPTOP-2PR02VJP  ~/Files/thingo/TBot-Agent   dev_kainan ±  python3 main.py
+---------------------------------------------------
+[1742550401.188433][agent-network][Agent-Network-Graph]
+VERTEX: TBotGroup TYPE: GroupVertex has been added to the graph
+
+
+---------------------------------------------------
+[1742550401.188849][agent-network][Agent-Network-Graph]
+VERTEX: worker TYPE: AgentVertex has been added to the graph
+
+
+---------------------------------------------------
+[1742550401.188964][agent-network][Agent-Network-Graph]
+VERTEX: ocr_tool TYPE: AgentVertex has been added to the graph
+
+
+---------------------------------------------------
+[1742550401.189048][agent-network][Agent-Network-Graph]
+VERTEX: doc_tool TYPE: AgentVertex has been added to the graph
+
+
+---------------------------------------------------
+[1742550401.18965][worker][user]
+请按照提供的文件中的说明，使用句子'Twinkle twinkle little star, how I wonder what you are'作为密钥生成一个单词。这个单词是什么？相关文件在 ./data/68ccf11a-bcd3-41e5-a5ee-3e29253449e9.docx。
+
+
+---------------------------------------------------
+[1742550421.917971][worker][assistant]
+{
+    "think": "为了生成一个单词，我需要首先从提供的文件中提取说明。文件是docx格式，因此我将使用Doc工具来提取文字。",
+    "tool_name": "doc_tool",
+    "tool_args": {
+        "doc_file_name": "./data/68ccf11a-bcd3-41e5-a5ee-3e29253449e9.docx"
+    }
+}
+
+
+---------------------------------------------------
+[1742550421.918103][worker][network]
+STEP TOKEN NUM: 533 COST: 0.001618
+
+
+---------------------------------------------------
+[1742550421.918126][worker][network]
+AGENT worker time cost: 20.72848105430603
+
+
+---------------------------------------------------
+[1742550421.918143][Agent-Network][network]
+AGENT worker time cost: 20.72849988937378
+
+
+---------------------------------------------------
+[1742550421.969778][doc_tool][network]
+AGENT doc_tool time cost: 0.05153918266296387
+
+
+---------------------------------------------------
+[1742550421.969866][Agent-Network][network]
+AGENT doc_tool time cost: 0.0516359806060791
+
+
+---------------------------------------------------
+[1742550421.969952][worker][user]
+请按照提供的文件中的说明，使用句子'Twinkle twinkle little star, how I wonder what you are'作为密钥生成一个单词。这个单词是什么？相关文件在 ./data/68ccf11a-bcd3-41e5-a5ee-3e29253449e9.docx。
+
+docx文件中的文本为 1. Place the first letter of the third word on a line to begin a new word.
+2. Add the first and last letters of the last word before and after the new word, respectively.
+3. Place the last letter of the fourth word at the beginning of the new word.
+4. Add the new word’s reverse to its end to make a palindrome.
+5. Remove letters 3, 4, 7, and 8 from the new word.
+6. Add the fourth letter from the end of the line, with the letter turned upside-down, to the beginning of the new word.
+7. Reverse the new word.
+8. Add the last two letters of the third word after the comma to the new word’s end.
+9. Remove the repeated consonant that’s not on the end of the new word.
+10. Put the new word in upper case.
+
+
+---------------------------------------------------
+[1742550444.798744][worker][assistant]
+{
+    "think": "根据提供的说明和密钥句子'Twinkle twinkle little star, how I wonder what you are'，我将按照步骤生成一个单词。首先，我需要确定每个步骤中提到的单词的位置和字母。然后，按照步骤逐步构建单词。",
+    "result": "WOW"
+}
+
+
+---------------------------------------------------
+[1742550444.798873][worker][network]
+STEP TOKEN NUM: 847 COST: 0.002114
+
+
+---------------------------------------------------
+[1742550444.798894][worker][network]
+AGENT worker time cost: 22.82894992828369
+
+
+---------------------------------------------------
+[1742550444.798911][Agent-Network][network]
+AGENT worker time cost: 22.828968048095703
+
+
+---------------------------------------------------
+[1742550444.798952][Agent-Network][network]
+PIPELINE 281b0c3a-69f3-4c6f-8509-6196fed68470 TOTSL TOKEN NUM: 1380 COST: 0.003732
+
+
+---------------------------------------------------
+[1742550444.798964][Agent-Network][network]
+PIPELINE 281b0c3a-69f3-4c6f-8509-6196fed68470 TIME COST TOTAL: 43.60910391807556
+
+
+---------------------------------------------------
+[1742550444.798979][Agent-Network][network]
+PIPELINE 281b0c3a-69f3-4c6f-8509-6196fed68470 has been released
+
+
+{
+    "result": "WOW"
+}
